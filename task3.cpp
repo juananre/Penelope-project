@@ -7,15 +7,15 @@ void task3(){
         INIT,
         WAIT_TO_TOGGLE_LED
     };
-    static Task3States task3State = Task23tates::INIT;
+    static Task3States task3State = Task3States::INIT;
     static uint32_t lasTime;
-    static constexpr uint32_t INTERVAL = 60;
+    static constexpr uint32_t INTERVAL = 334;
     static constexpr uint8_t ledBlue = 26;
     static bool ledStatus = false;
 
     switch(task3State){
         case Task3States::INIT:{
-            pinMode(ledGreen,OUTPUT);
+            pinMode(ledBlue,OUTPUT);
             lasTime = millis();
             task3State = Task3States::WAIT_TO_TOGGLE_LED;
             break;
